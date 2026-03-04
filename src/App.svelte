@@ -68,22 +68,36 @@
 
 <style>
     .logo {
-        height: 6em;
-        padding: 1.5em;
-        will-change: filter;
-        transition: filter 300ms;
+        width: 5vw;
+        height: 5vw;
+        min-width: 48px;
+        min-height: 48px;
+        padding: 0.8em;
+        will-change: filter, transform;
+        transition:
+            filter 300ms,
+            transform 300ms;
+        object-fit: contain;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
     }
+
     .logo:hover {
         filter: drop-shadow(0 0 2em #646cffaa);
+        transform: scale(1.15);
+        border-color: #646cff;
     }
     .logo.python:hover {
         filter: drop-shadow(0 0 2em #ffe261);
+        border-color: #ffe261;
     }
     .logo.rust:hover {
         filter: drop-shadow(0 0 2em #e8e6e3);
+        border-color: #e8e6e3;
     }
     .logo.svelte:hover {
         filter: drop-shadow(0 0 2em #ff3e00aa);
+        border-color: #ff3e00;
     }
     .read-the-docs {
         color: #888;
