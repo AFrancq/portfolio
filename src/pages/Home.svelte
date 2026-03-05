@@ -20,10 +20,8 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="photo-container">
-                <div class="photo-placeholder">
-                    <span>AF</span>
-                </div>
+            <div class="photo-spacer">
+                <!-- AF circle is rendered in App.svelte and animates here -->
             </div>
             <div class="hero-text">
                 <h1>Ash Francq</h1>
@@ -161,23 +159,10 @@
         gap: 2rem;
     }
 
-    .photo-container {
+    .photo-spacer {
         flex-shrink: 0;
-    }
-
-    .photo-placeholder {
         width: 120px;
         height: 120px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        border: 2px solid #00ffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: 600;
-        color: #c0c0c0;
-        letter-spacing: 0.1em;
     }
 
     .hero-text h1 {
