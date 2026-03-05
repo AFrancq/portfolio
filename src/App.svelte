@@ -18,7 +18,7 @@
 </script>
 
 <main>
-    <Sidebar {activePage} onNavigate={(page) => (activePage = page)} />
+    <Sidebar {activePage} onNavigate={(page) => (activePage = activePage === page ? "home" : page)} />
 
     <div class="content">
         {#if pages[activePage]}
