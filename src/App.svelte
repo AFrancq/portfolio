@@ -22,7 +22,8 @@
 
     <div class="content">
         {#if pages[activePage]}
-            <svelte:component this={pages[activePage]} />
+            {@const Component = pages[activePage]}
+            <Component />
         {/if}
     </div>
 </main>

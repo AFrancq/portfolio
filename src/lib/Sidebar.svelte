@@ -49,13 +49,16 @@
         min-width: 48px;
         min-height: 48px;
         padding: 0.8em;
-        will-change: filter, transform;
+        will-change: filter, transform, background-color;
         transition:
             filter 300ms,
-            transform 300ms;
+            transform 300ms,
+            background-color 300ms,
+            border-color 300ms;
         object-fit: contain;
         border: 2px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
+        background-color: transparent;
     }
 
     .logo:hover {
@@ -78,6 +81,28 @@
     .logo.go:hover {
         filter: drop-shadow(0 0 2em #00ffff);
         border-color: #00ffff;
+    }
+
+    /* Active states with background color */
+    .nav-btn.active .logo {
+        background-color: rgba(100, 108, 255, 0.25);
+        border-color: #646cff;
+    }
+    .nav-btn.active .logo.svelte {
+        background-color: rgba(255, 62, 0, 0.25);
+        border-color: #ff3e00;
+    }
+    .nav-btn.active .logo.python {
+        background-color: rgba(255, 226, 97, 0.25);
+        border-color: #ffe261;
+    }
+    .nav-btn.active .logo.go {
+        background-color: rgba(0, 255, 255, 0.25);
+        border-color: #00ffff;
+    }
+    .nav-btn.active .logo.rust {
+        background-color: rgba(232, 230, 227, 0.25);
+        border-color: #e8e6e3;
     }
     .read-the-docs {
         color: #888;
