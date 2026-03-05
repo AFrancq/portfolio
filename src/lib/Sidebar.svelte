@@ -1,6 +1,7 @@
 <script>
     import svelteLogo from "../assets/svelte.svg";
     import pythonLogo from "../assets/python.svg";
+    import goLogo from "../assets/go.svg";
     import rustLogo from "../assets/rust.svg";
 
     let { activePage, onNavigate } = $props();
@@ -8,6 +9,7 @@
     const navItems = [
         { id: "svelte", logo: svelteLogo, alt: "Svelte Logo", class: "svelte" },
         { id: "python", logo: pythonLogo, alt: "Python Logo", class: "python" },
+        { id: "go", logo: goLogo, alt: "Go Logo", class: "go" },
         { id: "rust", logo: rustLogo, alt: "Rust Logo", class: "rust" },
     ];
 </script>
@@ -72,6 +74,10 @@
     .logo.svelte:hover {
         filter: drop-shadow(0 0 2em #ff3e00aa);
         border-color: #ff3e00;
+    }
+    .logo.go:hover {
+        filter: drop-shadow(0 0 2em #00ffff);
+        border-color: #00ffff;
     }
     .read-the-docs {
         color: #888;

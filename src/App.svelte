@@ -3,6 +3,7 @@
     import Home from "./pages/Home.svelte";
     import SveltePage from "./pages/Svelte.svelte";
     import PythonPage from "./pages/Python.svelte";
+    import GoPage from "./pages/Go.svelte";
     import RustPage from "./pages/Rust.svelte";
 
     let activePage = $state("home");
@@ -11,6 +12,7 @@
         home: Home,
         svelte: SveltePage,
         python: PythonPage,
+        go: GoPage,
         rust: RustPage,
     };
 </script>
