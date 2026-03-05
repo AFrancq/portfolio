@@ -12,21 +12,9 @@
         { id: "go", logo: goLogo, alt: "Go Logo", variant: "go" },
         { id: "rust", logo: rustLogo, alt: "Rust Logo", variant: "rust" },
     ];
-
-    let isHome = $derived(activePage === "home");
 </script>
 
 <aside class="sidebar">
-    <!-- AF Home Button -->
-    <button
-        class="nav-btn af-btn"
-        class:expanded={isHome}
-        onclick={() => onNavigate("home")}
-        aria-label="Go to home"
-    >
-        <span class="af-circle">AF</span>
-    </button>
-
     <!-- Tech Nav Items -->
     <nav>
         <ul>
@@ -82,8 +70,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 1rem;
-        gap: 1rem;
+        justify-content: center;
+        padding-top: calc(var(--nav-size) + 2rem); /* Space for mini AF circle */
     }
 
     nav ul {
@@ -169,70 +157,5 @@
     .nav-btn.active .nav-icon.rust {
         background-color: rgba(232, 230, 227, 0.2);
         border-color: var(--color-rust);
-    }
-
-    /* ========================================
-       AF Circle (Home button)
-       ======================================== */
-    .af-btn {
-        position: fixed;
-        z-index: 100;
-        /* Default position: in sidebar, aligned with nav items */
-        top: 1rem;
-        left: calc(7.5vw - calc(var(--nav-size) / 2));
-        transition:
-            top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .af-circle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--nav-size);
-        height: var(--nav-size);
-        border-radius: 50%;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        border: 2px solid var(--nav-border-idle);
-        color: #c0c0c0;
-        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        will-change: transform, box-shadow, border-color, width, height;
-        transition:
-            transform var(--transition-smooth),
-            box-shadow var(--transition-fast),
-            border-color var(--transition-smooth),
-            width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .af-btn:hover .af-circle {
-        border-color: var(--color-cyan);
-        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-        transform: scale(1.1);
-    }
-
-    /* Expanded state (on home page) */
-    .af-btn.expanded {
-        top: 4rem;
-        left: calc(15vw + 2rem);
-    }
-
-    .af-btn.expanded .af-circle {
-        width: 120px;
-        height: 120px;
-        font-size: 2rem;
-        border-color: var(--color-cyan);
-    }
-
-    .af-btn.expanded:hover .af-circle {
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-    }
-
-    /* Adjust nav position to account for fixed AF button */
-    nav {
-        margin-top: calc(var(--nav-size) + 1.5rem);
     }
 </style>

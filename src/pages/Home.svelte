@@ -9,195 +9,209 @@
 
     function handleSubmit(e) {
         e.preventDefault();
-        // For now, construct mailto link
         const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
         const body = encodeURIComponent(`From: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
         window.location.href = `mailto:ash.francq@gmail.com?subject=${subject}&body=${body}`;
     }
 </script>
 
-<section class="home">
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <div class="photo-spacer">
-                <!-- AF circle is rendered in App.svelte and animates here -->
-            </div>
+<div class="page">
+    <!-- Hero Header - Full width, prominent -->
+    <header class="hero-header">
+        <div class="hero-layout">
+            <!-- Space for AF circle (rendered in App.svelte) -->
+            <div class="af-spacer"></div>
+            
             <div class="hero-text">
                 <h1>Ash Francq</h1>
                 <p class="title">Software Engineer · ML Researcher</p>
                 <p class="tagline">"Creating machines that can truly create"</p>
             </div>
+            
+            <!-- Minimalist Dragon -->
+            <svg class="dragon" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M160 20 Q180 30 175 50 Q170 70 150 80 L140 75 Q155 65 158 50 Q160 35 150 28 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M150 80 Q130 90 110 85 Q90 80 80 90 Q70 100 75 115 Q80 130 100 135" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M100 135 Q120 140 140 130 Q160 120 165 100" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M75 115 L60 125 M75 120 L55 135 M80 125 L65 140" stroke="currentColor" stroke-width="1" fill="none"/>
+                <path d="M110 85 Q115 70 130 65 Q145 60 150 70" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+                <circle cx="162" cy="42" r="2" fill="currentColor"/>
+                <path d="M170 35 L185 25 M172 38 L190 32" stroke="currentColor" stroke-width="1" fill="none"/>
+            </svg>
         </div>
-        
-        <!-- Minimalist Dragon -->
-        <svg class="dragon" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M160 20 Q180 30 175 50 Q170 70 150 80 L140 75 Q155 65 158 50 Q160 35 150 28 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M150 80 Q130 90 110 85 Q90 80 80 90 Q70 100 75 115 Q80 130 100 135" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M100 135 Q120 140 140 130 Q160 120 165 100" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M75 115 L60 125 M75 120 L55 135 M80 125 L65 140" stroke="currentColor" stroke-width="1" fill="none"/>
-            <path d="M110 85 Q115 70 130 65 Q145 60 150 70" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
-            <circle cx="162" cy="42" r="2" fill="currentColor"/>
-            <path d="M170 35 L185 25 M172 38 L190 32" stroke="currentColor" stroke-width="1" fill="none"/>
-        </svg>
     </header>
 
-    <!-- About Section -->
-    <section class="about">
-        <h2>About</h2>
-        <p>
-            I'm a Software Engineer with <strong>4 years of experience</strong> building production systems, 
-            with deep interests in <em>machine learning</em>, <em>learning theory</em>, and <em>artificial intelligence</em>.
-        </p>
-        <p>
-            My research background spans <strong>Applied Machine Learning</strong> — where I've published work — 
-            to current explorations in <strong>Learning Theory</strong> and <strong>Neuromorphic Computing</strong> implementations in Rust.
-        </p>
-        <p>
-            I believe the next frontier lies in understanding how machines can genuinely learn and create, 
-            not just pattern-match. That's what drives my work.
-        </p>
-    </section>
+    <!-- Main Content -->
+    <main class="content">
+        <!-- About Section -->
+        <section class="about">
+            <h2>About</h2>
+            <p>
+                I'm a Software Engineer with <strong>4 years of experience</strong> building production systems, 
+                with deep interests in <em>machine learning</em>, <em>learning theory</em>, and <em>artificial intelligence</em>.
+            </p>
+            <p>
+                My research background spans <strong>Applied Machine Learning</strong> — where I've published work — 
+                to current explorations in <strong>Learning Theory</strong> and <strong>Neuromorphic Computing</strong> implementations in Rust.
+            </p>
+            <p>
+                I believe the next frontier lies in understanding how machines can genuinely learn and create, 
+                not just pattern-match. That's what drives my work.
+            </p>
+        </section>
 
-    <!-- Highlights -->
-    <section class="highlights">
-        <div class="stat">
-            <span class="number">4+</span>
-            <span class="label">Years Engineering</span>
-        </div>
-        <div class="stat">
-            <span class="number">1</span>
-            <span class="label">Published Paper</span>
-        </div>
-        <div class="stat">
-            <span class="number">∞</span>
-            <span class="label">Curiosity</span>
-        </div>
-    </section>
+        <!-- Highlights -->
+        <section class="highlights">
+            <div class="stat">
+                <span class="number">4+</span>
+                <span class="label">Years Engineering</span>
+            </div>
+            <div class="stat">
+                <span class="number">1</span>
+                <span class="label">Published Paper</span>
+            </div>
+            <div class="stat">
+                <span class="number">∞</span>
+                <span class="label">Curiosity</span>
+            </div>
+        </section>
 
-    <!-- Reading List -->
-    <section class="reading">
-        <h2>Current Reading</h2>
-        <p class="reading-intro">Textbooks I'm working through:</p>
-        <ul class="reading-list">
-            <li>
-                <span class="book-title">Understanding Machine Learning: From Theory to Algorithms</span>
-                <span class="book-author">Shalev-Shwartz & Ben-David</span>
-            </li>
-            <li>
-                <span class="book-title">Neuromorphic Computing and Engineering</span>
-                <span class="book-author">Various</span>
-            </li>
-            <!-- Add more books as needed -->
-        </ul>
-    </section>
+        <!-- Reading List -->
+        <section class="reading">
+            <h2>Current Reading</h2>
+            <p class="reading-intro">Textbooks I'm working through:</p>
+            <ul class="reading-list">
+                <li>
+                    <span class="book-title">Understanding Machine Learning: From Theory to Algorithms</span>
+                    <span class="book-author">Shalev-Shwartz & Ben-David</span>
+                </li>
+                <li>
+                    <span class="book-title">Neuromorphic Computing and Engineering</span>
+                    <span class="book-author">Various</span>
+                </li>
+            </ul>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <p>Explore my work in the sidebar — each language represents a domain of projects.</p>
-        <a href={resumePdf} download="Francq_Resume.pdf" class="btn btn-primary">
-            Download Resume
-        </a>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
-        <p>Interested in collaboration, research opportunities, or just want to connect?</p>
-        
-        <div class="contact-methods">
-            <a href="https://github.com/AFrancq" target="_blank" rel="noopener" class="contact-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-                <span>GitHub</span>
+        <!-- CTA -->
+        <section class="cta">
+            <p>Explore my work in the sidebar — each language represents a domain of projects.</p>
+            <a href={resumePdf} download="Francq_Resume.pdf" class="btn btn-primary">
+                Download Resume
             </a>
-            <a href="tel:+1234567890" class="contact-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <span>Phone</span>
-            </a>
-        </div>
+        </section>
 
-        <form class="contact-form" onsubmit={handleSubmit}>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" bind:value={formData.name} required />
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Get in Touch</h2>
+            <p>Interested in collaboration, research opportunities, or just want to connect?</p>
+            
+            <div class="contact-methods">
+                <a href="https://github.com/AFrancq" target="_blank" rel="noopener" class="contact-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="tel:+1234567890" class="contact-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>Phone</span>
+                </a>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" bind:value={formData.email} required />
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="4" bind:value={formData.message} required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </section>
-</section>
+
+            <form class="contact-form" onsubmit={handleSubmit}>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" bind:value={formData.name} required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" bind:value={formData.email} required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" bind:value={formData.message} required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+</div>
 
 <style>
-    .home {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
+    .page {
+        min-height: 100vh;
     }
 
-    /* Hero */
-    .hero {
-        position: relative;
-        padding: 2rem 0 3rem;
-        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-        margin-bottom: 3rem;
+    /* ========================================
+       Hero Header
+       ======================================== */
+    .hero-header {
+        min-height: 280px;
+        padding: 2rem 3rem;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+        background: linear-gradient(180deg, rgba(0, 255, 255, 0.02) 0%, transparent 100%);
     }
 
-    .hero-content {
+    .hero-layout {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
+        max-width: 900px;
     }
 
-    .photo-spacer {
+    .af-spacer {
         flex-shrink: 0;
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-text {
+        flex: 1;
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin: 0;
         color: #ffffff;
         font-weight: 600;
+        letter-spacing: -0.02em;
     }
 
     .title {
         color: #00ffff;
-        font-size: 1.1rem;
-        margin: 0.5rem 0;
+        font-size: 1.25rem;
+        margin: 0.75rem 0;
         font-weight: 500;
     }
 
     .tagline {
-        color: #c0c0c0;
+        color: #808080;
         font-style: italic;
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: 0.5rem 0 0;
     }
 
     .dragon {
-        position: absolute;
-        top: 1rem;
-        right: 0;
-        width: 140px;
+        width: 160px;
         height: auto;
-        color: rgba(0, 255, 255, 0.3);
+        color: rgba(0, 255, 255, 0.25);
         transition: color 0.3s ease;
+        flex-shrink: 0;
     }
 
     .dragon:hover {
-        color: rgba(0, 255, 255, 0.6);
+        color: rgba(0, 255, 255, 0.5);
+    }
+
+    /* ========================================
+       Main Content
+       ======================================== */
+    .content {
+        max-width: 800px;
+        padding: 3rem;
+        padding-left: calc(140px + 3rem); /* Space for AF circle */
     }
 
     /* About */
@@ -428,16 +442,33 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-        .hero-content {
+    @media (max-width: 700px) {
+        .hero-header {
+            padding: 1.5rem;
+        }
+
+        .hero-layout {
             flex-direction: column;
             text-align: center;
+            gap: 1.5rem;
+        }
+
+        .af-spacer {
+            width: 100px;
+            height: 100px;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
         }
 
         .dragon {
-            position: static;
-            margin: 1rem auto;
-            display: block;
+            width: 120px;
+        }
+
+        .content {
+            padding: 2rem 1.5rem;
+            padding-left: 1.5rem; /* Reset on mobile */
         }
 
         .highlights {
